@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Https\Controller\DashboardController;
-use App\Https\Controller\ProfileController;
+// use App\Https\Controller\DashboardController;
+// use App\Https\Controller\ProfileController;
+use App\Http\Controllers\FormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,12 @@ use App\Https\Controller\ProfileController;
 |
 */
 
-Route::get('/', [DashboardController::class , 'index']);
-Route::get('/profile', [ProfileController::class , 'index']);
+// Route::get('/', [DashboardController::class , 'index']);
+// Route::get('/profile', [ProfileController::class , 'index']);
 
 // Route::get('/new', function(){
 //     return view('new.index');
 // });
+
+Route::get('/form', [FormController::class, 'showForm']);
+Route::post('/form', [FormController::class, 'submitForm']);
